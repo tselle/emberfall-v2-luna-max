@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0d0e13">
+  <title>Emberfall: The Emberwild Saga</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main id="app">
+    <section id="title" class="screen active">
+      <div class="title-mark"><span class="eyebrow">A classic fantasy role-playing game</span><h1>Emberfall</h1><p>The Emberwild Saga</p></div>
+      <div class="title-actions">
+        <button id="newGame" class="primary">New Game</button>
+        <button id="continueGame">Continue</button>
+        <button id="loadGame">Load Game</button>
+        <button data-help>How to Play</button>
+      </div>
+      <p class="fineprint">An unofficial, non-commercial fan project. Not endorsed by or affiliated with any tabletop or computer-game publisher.</p>
+    </section>
+
+    <section id="campaign" class="screen">
+      <header class="screen-head"><div><span class="eyebrow">Choose your adventure</span><h2>Campaigns &amp; Expeditions</h2></div><button data-back="title">Back</button></header>
+      <nav id="campaignTabs" class="tabs" aria-label="Adventure groups"></nav>
+      <div id="campaignCards" class="campaign-cards"></div>
+      <footer class="screen-foot"><span id="campaignNote">Choose an adventure to continue.</span><button id="assemble" class="primary" disabled>Assemble the Company</button></footer>
+    </section>
+
+    <section id="assembly" class="screen">
+      <header class="screen-head"><div><span class="eyebrow">Your company</span><h2>Assemble the Company</h2></div><button data-back="campaign">Back</button></header>
+      <div class="assembly-layout"><section><h3>Waiting roster</h3><div id="waitingRoster" class="hero-list"></div><div class="button-row"><button id="createHero">Create Adventurer</button><button id="deleteHero">Delete Selected</button></div></section><section><h3>Active party <small>(up to six)</small></h3><div id="activeRoster" class="hero-list"></div><div class="button-row"><button id="addHero">Add Selected</button><button id="removeHero">Remove</button><button id="moveHero">Move Forward</button></div><p id="companyGold" class="gold-text"></p></section></div>
+      <footer class="screen-foot"><span id="assemblyIntro"></span><button id="beginAdventure" class="primary" disabled>Begin Adventure</button></footer>
+    </section>
+
+    <section id="game" class="screen game-screen">
+      <header id="hud"><button id="partyToggle" class="icon-button" aria-label="Toggle party">☷</button><div id="partyPips"></div><div class="hud-place"><strong id="location">Emberfall</strong><span id="facing"></span></div><div id="ahead" class="hud-ahead">The road awaits.</div><div id="clock"></div><div id="gold"></div><button id="menuButton" aria-label="Open menu">☰</button></header>
+      <div id="gamebody"><div class="stage-wrap"><canvas id="view3d" aria-label="First-person view"></canvas><canvas id="overCanvas" aria-label="Wilderness map" hidden></canvas><canvas id="combatCanvas" aria-label="Tactical combat board" hidden></canvas><div id="touchPad" class="touch-pad" hidden></div></div>
+        <aside id="party" class="party-drawer"><div class="drawer-head"><h2>Company</h2><button id="closeParty" aria-label="Close party">×</button></div><div id="partyCards"></div></aside>
+      </div>
+      <nav id="cmdbar" aria-label="Game commands"></nav>
+      <div id="cmdhint"></div>
+      <div class="lower-game"><div id="log" role="log" aria-live="polite"></div><div class="minimap-wrap"><canvas id="minimap" width="500" height="420" aria-label="Map, click to enlarge"></canvas><button id="mapButton">Map</button></div></div>
+    </section>
+  </main>
+  <div id="modalRoot"></div>
+  <div id="toast" aria-live="polite"></div>
+  <script src="js/rules.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/modules.js"></script>
+  <script src="js/monsters.js"></script>
+  <script src="js/wilds.js"></script>
+  <script src="js/treasure.js"></script>
+  <script src="js/adventures.js"></script>
+  <script src="js/figures.js"></script>
+  <script src="js/view3d.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/combat.js"></script>
+  <script src="js/overland.js"></script>
+  <script src="js/campaign.js"></script>
+  <script src="js/journal.js"></script>
+  <script src="js/map.js"></script>
+  <script src="js/bestiary.js"></script>
+  <script src="js/navpad.js"></script>
+  <script src="js/watch.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
